@@ -47,6 +47,7 @@ const NewPoll = (props) => {
 							className="form-input"
 							id="option-1"
 							name="option-1"
+							data-testid="option-1"
 							placeholder="First Option"
 							type="text"
 							value={option1}
@@ -61,6 +62,7 @@ const NewPoll = (props) => {
 							className="form-input"
 							id="option-2"
 							name="option-2"
+							data-testid="option-2"
 							placeholder="Second Option"
 							type="text"
 							value={option2}
@@ -70,6 +72,7 @@ const NewPoll = (props) => {
 					<div className="form-group">
 						<button
 							className="btn btn-100"
+							data-testid="create-btn"
 							type="submit"
 							disabled={option1 === "" && option2 === ""}
 						>

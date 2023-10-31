@@ -161,6 +161,15 @@ code {
   font-weight: normal;
 }
 
+.alert-error {
+  width: 60%;
+  min-width: 480px;
+  border: 2px solid #a03020;
+  background-color: #d0aaaa;
+  padding: 16px;
+  margin: 0 auto 16px auto;
+}
+
 /* Dashboard */
 
 .card {

@@ -175,13 +175,10 @@ export function _saveQuestion(question) {
 
 		const formattedQuestion = formatQuestion(question);
 		setTimeout(() => {
-			console.log("_saveQuestion adding question");
-			console.log("_saveQuestion - questions", questions);
 			questions = {
 				...questions,
 				[formattedQuestion.id]: formattedQuestion,
 			};
-			console.log("_saveQuestion - questions", questions);
 
 			resolve(formattedQuestion);
 		}, 1000);

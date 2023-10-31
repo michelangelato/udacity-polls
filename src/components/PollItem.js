@@ -10,10 +10,12 @@ const Poll = (props) => {
 	return (
 		<div>
 			<p>
-				<strong>{poll.author}</strong>
+				<strong>{poll ? poll.author : "-"}</strong>
 			</p>
-			<p className="text-secondary">{formatDate(poll.timestamp)}</p>
-			<Link className="btn" to={`/questions/${poll.id}`}>
+			<p className="text-secondary">
+				{poll ? formatDate(poll.timestamp) : "-"}
+			</p>
+			<Link className="btn" to={`/questions/${poll ? poll.id : ""}`}>
 				Show
 			</Link>
 		</div>

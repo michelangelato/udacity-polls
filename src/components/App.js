@@ -18,7 +18,6 @@ import NotFound from "./NotFound";
 function App(props) {
 	useEffect(() => {
 		props.dispatch(handleInitialData());
-		console.log("App props", props);
 	}, [props]);
 
 	return (

@@ -19,14 +19,17 @@ const Login = (props) => {
 	const navigate = useNavigate();
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
+	const [showError, setShowError] = useState(false);
 
 	const handleChangeUsername = (e) => {
 		const username = e.target.value;
+		setShowError(false);
 		setUsername(username);
 	};
 
 	const handleChangePassword = (e) => {
 		const password = e.target.value;
+		setShowError(false);
 		setPassword(password);
 	};
 
@@ -39,6 +42,7 @@ const Login = (props) => {
 			navigate(window.location.pathname);
 		} else {
 			// login failed
+			setShowError(true);
 			setUsername("");
 			setPassword("");
 		}
@@ -47,6 +51,13 @@ const Login = (props) => {
 	return (
 		<div className="login">
 			<h1 className="app-title">Udacity Polls</h1>
+			{showError ? (
+				<div className="alert-error" data-testid="alert-error">
+					Invalid credentials. Try again.
+				</div>
+			) : (
+				""
+			)}
 			<form className="form" onSubmit={handleSubmit}>
 				<div className="form-group">
 					<label className="form-label" htmlFor="username">
@@ -56,6 +67,7 @@ const Login = (props) => {
 						className="form-input"
 						id="username"
 						name="username"
+						data-testid="username"
 						type="text"
 						value={username}
 						onChange={handleChangeUsername}
@@ -70,12 +82,13 @@ const Login = (props) => {
 						id="password"
 						name="password"
 						type="password"
+						data-testid="password"
 						value={password}
 						onChange={handleChangePassword}
 					/>
 				</div>
 				<div>
-					<button className="btn btn-100" type="submit">
+					<button className="btn btn-100" type="submit" data-testid="login-btn">
 						Login
 					</button>
 				</div>

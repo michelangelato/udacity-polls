@@ -32,7 +32,6 @@ export function handleAddPoll(option1, option2) {
 			author: authedUser,
 		})
 			.then((poll) => {
-				console.log("promise then - poll", poll);
 				dispatch(addPoll(poll));
 				dispatch(addQuestionToUser(poll.author, poll.id));
 			})

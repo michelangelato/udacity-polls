@@ -22,14 +22,10 @@ export default function users(state = {}, action) {
 			};
 		case ADD_ANSWER_TO_USER:
 			const { voterId, qid, answer } = action;
-			console.log("ADD_ANSWER_TO_USER - voterId", voterId);
-			console.log("ADD_ANSWER_TO_USER - qid", qid);
-			console.log("ADD_ANSWER_TO_USER - answer", answer);
 			const answers = {
 				...state[voterId].answers,
 			};
 			answers[qid] = answer;
-			console.log("ADD_ANSWER_TO_USER - answer", answer);
 			return {
 				...state,
 				[voterId]: {
