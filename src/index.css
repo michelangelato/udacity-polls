@@ -67,6 +67,15 @@ code {
   padding: 4px 8px;
 }
 
+/* Not Found */
+
+.not-found {
+  text-align: center;
+  width: 60%;
+  min-width: 480px;
+  margin: 0 auto;
+}
+
 /* Header */
 
 .header {
